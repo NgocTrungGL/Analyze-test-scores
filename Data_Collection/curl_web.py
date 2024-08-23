@@ -1,8 +1,13 @@
-# import subprocess 
+import subprocess 
 
-# result = subprocess.check_output('curl -F "sobaodanh=02000001" diemthi.hcm.edu.vn/Home/Show')
+start = 2000001
+end = 2074719
 
-# print(result)
+file = open("raw_data.txt", "w")
 
-file = open("data.txt", "w")
-file.write("DUT Chao don cac ban TSV")
+for sbd in range(start,end):
+	command = 'curl -F "SoBaoDanh=0' + str(sbd) + '" diemthi.hcm.edu.vn/Home/Show'
+	result = subprocess.check_output(command)
+
+	file.write(str(result) + "\n")
+	
