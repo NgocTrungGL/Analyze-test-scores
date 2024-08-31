@@ -1,5 +1,5 @@
 # read file
-with open("clean_data.csv", encoding="utf8") as file:
+with open("../Data_Clean/clean_data.csv", encoding="utf8") as file:
     data = file.read().split("\n")
 
 header = data[0]
